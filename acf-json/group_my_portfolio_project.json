@@ -1,0 +1,48 @@
+{
+  "key": "group_my_portfolio_project",
+  "title": "Portfolio Project Details",
+  "fields": [
+    {
+      "key": "field_mp_language_icon",
+      "label": "Language icon class",
+      "name": "language_icon",
+      "type": "text"
+    },
+    {
+      "key": "field_mp_slider_images",
+      "label": "Slider images",
+      "name": "slider_images",
+      "type": "gallery",
+      "return_format": "id",
+      "library": "all"
+    },
+    {
+      "key": "field_mp_description",
+      "label": "Project description",
+      "name": "description",
+      "type": "textarea"
+    },
+    {
+      "key": "field_mp_features",
+      "label": "Features",
+      "name": "features",
+      "type": "textarea",
+      "instructions": "One feature per line."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "project"
+      }
+    ]
+  ],
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "show_in_rest": 0
+}

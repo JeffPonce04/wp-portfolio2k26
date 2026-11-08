@@ -1,0 +1,482 @@
+/* ============================================================
+   education.css — Education Section (black & white theme)
+   ============================================================ */
+
+/* ---------- Section base ---------- */
+.education-section {
+    position: relative;
+    padding: 120px 6% 100px;
+    background: #050505;
+    color: #f2f2f2;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    isolation: isolate;
+}
+
+/* ---------- Decorative background ---------- */
+.edu-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, #000 25%, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 25%, transparent 75%);
+    animation: eduGridDrift 45s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes eduGridDrift {
+    0%   { background-position: 0 0, 0 0; }
+    100% { background-position: 60px 60px, 60px 60px; }
+}
+
+.edu-bg-glow {
+    position: absolute;
+    top: -20%;
+    left: 50%;
+    width: 900px;
+    height: 900px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255,255,255,0.07), transparent 65%);
+    filter: blur(60px);
+    animation: eduGlowPulse 10s ease-in-out infinite alternate;
+    z-index: 0;
+    pointer-events: none;
+}
+
+@keyframes eduGlowPulse {
+    0%   { opacity: 0.6; transform: translateX(-50%) scale(1); }
+    100% { opacity: 1;   transform: translateX(-50%) scale(1.15); }
+}
+
+/* ---------- Container ---------- */
+.edu-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+/* ---------- Header ---------- */
+.edu-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.edu-tag {
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 14px;
+}
+
+.edu-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    margin: 0 0 18px;
+}
+
+.edu-title span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: #fff;
+}
+
+.edu-title-line {
+    width: 0;
+    height: 2px;
+    margin: 0 auto 22px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    animation: eduLineGrow 1.6s ease-out forwards 0.3s;
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+@keyframes eduLineGrow {
+    to { width: 140px; }
+}
+
+.edu-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    color: #9a9a9a;
+    text-transform: uppercase;
+}
+
+/* ---------- Main card ---------- */
+.edu-main-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 50px;
+    background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 50px 45px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.edu-main-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    opacity: 0.5;
+}
+
+.edu-main-card:hover {
+    border-color: #444;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+}
+
+/* ---------- Logos side ---------- */
+.edu-logos-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.edu-logo-box {
+    text-align: center;
+}
+
+.edu-logo-inner {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #ffffff; /* White background to match square logos */
+    border: 1px solid #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+}
+
+.edu-logo-inner::after {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.6s ease;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+
+.edu-logo-box:hover .edu-logo-inner {
+    transform: scale(1.06);
+    border-color: #555;
+    box-shadow: 0 0 30px rgba(255,255,255,0.15);
+}
+
+.edu-logo-box:hover .edu-logo-inner::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* FIX: Make the logo fit perfectly inside the circle */
+.edu-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fills the circle completely */
+    border-radius: 50%; /* Rounds the image itself */
+    padding: 0;
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.edu-logo-box:hover .edu-logo {
+    filter: grayscale(0%) contrast(1.05);
+    transform: scale(1.05);
+}
+
+.edu-logo-label {
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+    transition: color 0.3s ease;
+}
+
+.edu-logo-box:hover .edu-logo-label {
+    color: #fff;
+}
+
+.edu-logo-connector {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, transparent, #333, transparent);
+    position: relative;
+}
+
+.edu-logo-connector span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(255,255,255,0.6);
+    animation: connectorPulse 2s ease-in-out infinite;
+}
+
+@keyframes connectorPulse {
+    0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(0.8); }
+    50%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.2); }
+}
+
+/* ---------- Content side ---------- */
+.edu-content-side {
+    position: relative;
+}
+
+.edu-school-name {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #b5b5b5;
+    margin-bottom: 12px;
+}
+
+.edu-school-name i {
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.edu-degree {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: #fff;
+    margin: 0 0 14px;
+    line-height: 1.25;
+}
+
+.edu-period {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    color: #9a9a9a;
+    margin: 0 0 22px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.edu-period i {
+    color: #fff;
+    font-size: 0.8rem;
+    margin-right: 4px;
+}
+
+.edu-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, transparent);
+    margin-bottom: 24px;
+}
+
+.edu-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.94rem;
+    line-height: 1.75;
+    color: #b5b5b5;
+    margin: 0 0 16px;
+}
+
+.edu-description strong,
+.edu-description em {
+    color: #fff;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* ---------- Highlights ---------- */
+.edu-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 26px 0 28px;
+}
+
+.edu-highlight-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    border: 1px solid #2e2e2e;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.03);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #cfcfcf;
+    transition: all 0.35s ease;
+    cursor: default;
+}
+
+.edu-highlight-pill i {
+    font-size: 0.8rem;
+    color: #fff;
+    transition: transform 0.35s ease;
+}
+
+.edu-highlight-pill:hover {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(255,255,255,0.12);
+}
+
+.edu-highlight-pill:hover i {
+    color: #000;
+    transform: scale(1.15);
+}
+
+/* ---------- Stats ---------- */
+.edu-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+    padding-top: 28px;
+    border-top: 1px solid #222;
+}
+
+.edu-stat {
+    text-align: center;
+}
+
+.edu-stat-number {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 6px;
+    transition: color 0.3s ease;
+}
+
+.edu-stat:hover .edu-stat-number {
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.edu-stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #888;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+    .edu-main-card {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 32px;
+    }
+    .edu-logos-side {
+        flex-direction: row;
+        justify-content: center;
+        gap: 32px;
+    }
+    .edu-logo-connector {
+        width: 60px;
+        height: 1px;
+    }
+    .edu-logo-connector span {
+        top: 50%;
+        left: 50%;
+    }
+    .edu-logo-inner {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 620px) {
+    .education-section {
+        padding: 90px 5% 70px;
+    }
+    .edu-main-card {
+        padding: 30px 22px;
+    }
+    .edu-logos-side {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .edu-logo-connector {
+        width: 1px;
+        height: 30px;
+    }
+    .edu-logo-inner {
+        width: 110px;
+        height: 110px;
+    }
+    .edu-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .edu-degree {
+        font-size: 1.35rem;
+    }
+    .edu-description {
+        font-size: 0.88rem;
+    }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .edu-bg-grid,
+    .edu-bg-glow,
+    .edu-logo-connector span,
+    .edu-title-line {
+        animation: none !important;
+    }
+    .edu-title-line {
+        width: 140px;
+    }
+    .edu-logo-inner,
+    .edu-logo,
+    .edu-highlight-pill,
+    .edu-logo-label {
+        transition: none !important;
+    }
+}

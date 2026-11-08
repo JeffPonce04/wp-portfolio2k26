@@ -1,0 +1,271 @@
+/* ============================================================
+   THEME VARIABLES & GLOBAL OVERRIDES
+   ============================================================ */
+
+/* --- DARK MODE (Default) --- */
+:root {
+    --bg-main: #030303;
+    --bg-section: #050505;
+    --bg-card: #111111;
+    --bg-card-hover: #1a1a1a;
+    --text-main: #ffffff;
+    --text-muted: #b0b0b0;
+    --text-dark: #888888;
+    --border-color: #222222;
+    --border-hover: #555555;
+    --nav-bg: rgba(10, 10, 10, 0.4);
+    --input-bg: #0a0a0a;
+    --shadow: rgba(0, 0, 0, 0.7);
+    
+    --btn-primary-bg: #4a4a4a;
+    --btn-primary-hover: #5a5a5a;
+    --btn-secondary-bg: #333333;
+    --btn-secondary-hover: #444444;
+}
+
+/* --- LIGHT MODE (Applied only to sections below the homepage) --- */
+
+
+/* ============================================================
+   GLOBAL OVERRIDES
+   ============================================================ */
+body {
+    background-color: var(--bg-main) !important;
+    color: var(--text-main) !important;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ============================================================
+   FORCE HOMEPAGE TO ALWAYS BE DARK MODE
+   ============================================================ */
+.dev-portfolio-wrapper {
+    background-color: #030303 !important;
+    color: #ffffff !important;
+}
+.dev-portfolio-wrapper .title-small,
+.dev-portfolio-wrapper .title-large,
+.dev-portfolio-wrapper .hero-subtitle,
+.dev-portfolio-wrapper .hero-desc {
+    color: #ffffff !important;
+}
+
+
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.portfolio-nav {
+    background: var(--nav-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+.nav-logo, .nav-links a:hover {
+    color: var(--text-main) !important;
+}
+.nav-links a {
+    color: var(--text-muted) !important;
+}
+.nav-links a::after {
+    background-color: var(--text-main) !important;
+}
+.nav-btn {
+    background-color: var(--text-main) !important;
+    color: var(--bg-main) !important;
+}
+
+
+
+/* ============================================================
+   TYPOGRAPHY (Sections)
+   ============================================================ */
+.section-title, .edu-title, .member-name, .project-title, .service-title, .stat-number, .author-name, .blog-title, .edu-degree, .edu-school-name, .project-modal-title, .skills-modal-name {
+    color: var(--text-main) !important;
+}
+.section-title span, .edu-title span, .edu-description strong, .edu-description em {
+    color: var(--text-main) !important;
+}
+.section-subtitle, .edu-subtitle, .member-role, .project-desc, .service-desc, .stat-label, .author-role, .blog-desc, .edu-period, .edu-description, .skills-modal-role, .project-modal-desc, .project-modal-features li {
+    color: var(--text-muted) !important;
+}
+.section-tag, .edu-tag {
+    color: var(--text-dark) !important;
+}
+.title-line, .edu-title-line, .edu-divider {
+    background: linear-gradient(90deg, transparent, var(--text-main), transparent) !important;
+}
+
+/* ============================================================
+   BACKGROUNDS (Sections)
+   ============================================================ */
+.about-section, .education-section, .projects-section, .services-section, .achievements-section, .testimonials-section, .blog-section, .section-two, .contact {
+    background-color: var(--bg-section) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* ============================================================
+   CARDS (Team, Projects, Services, Stats, Testimonials, Blog)
+   ============================================================ */
+.card-inner, .edu-main-card, .project-card, .service-card, .stat-item, .testimonial-card, .blog-card, .contact .content .row .card, .contact-form {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: 0 4px 20px var(--shadow) !important;
+}
+.card-inner:hover, .project-card:hover, .service-card:hover, .stat-item:hover, .testimonial-card:hover, .blog-card:hover, .contact .content .row .card:hover {
+    border-color: var(--border-hover) !important;
+    box-shadow: 0 15px 30px var(--shadow) !important;
+}
+
+/* Card Inner Elements */
+.service-icon, .author-avatar, .contact .content .row .card .contact-icon {
+    background-color: var(--bg-section) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+.service-card:hover .service-icon {
+    background-color: var(--text-main) !important;
+    color: var(--bg-main) !important;
+}
+.social-mini a {
+    border-color: var(--border-color) !important;
+    color: var(--text-muted) !important;
+}
+.social-mini a:hover {
+    background-color: var(--text-main) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--text-main) !important;
+}
+.blog-meta, .quote-icon {
+    color: var(--text-dark) !important;
+}
+.contact .content .row .card .info h3 {
+    color: var(--text-main) !important;
+}
+.contact .content .row .card .info span {
+    color: var(--text-muted) !important;
+}
+
+/* ============================================================
+   BUTTONS (Hero Section - Forced Dark in CSS)
+   ============================================================ */
+.btn-primary {
+    background-color: var(--btn-primary-bg) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+}
+.btn-primary:hover {
+    background-color: var(--btn-primary-hover) !important;
+}
+.btn-secondary {
+    background-color: var(--btn-secondary-bg) !important;
+    color: var(--text-main) !important;
+    border: 1px solid var(--border-color) !important;
+}
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover) !important;
+}
+
+/* ============================================================
+   EDUCATION SPECIFIC
+   ============================================================ */
+.edu-logo-inner {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+.edu-highlight-pill {
+    background-color: var(--bg-section) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-muted) !important;
+}
+.edu-highlight-pill i {
+    color: var(--text-main) !important;
+}
+.edu-highlight-pill:hover {
+    background-color: var(--text-main) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--text-main) !important;
+}
+.edu-highlight-pill:hover i {
+    color: var(--bg-main) !important;
+}
+.edu-logo-connector span {
+    background-color: var(--text-main) !important;
+}
+
+/* ============================================================
+   SKILLS & PROJECT MODAL
+   ============================================================ */
+.skills-modal, .project-modal {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+}
+.skills-modal-close, .project-modal-close {
+    background-color: var(--bg-section) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+.skills-modal-close:hover, .project-modal-close:hover {
+    background-color: var(--text-main) !important;
+    color: var(--bg-main) !important;
+}
+.skill-bar {
+    background-color: var(--border-color) !important;
+}
+.skill-bar-fill {
+    background: linear-gradient(90deg, var(--text-dark), var(--text-main)) !important;
+}
+.skill-tag {
+    border-color: var(--border-color) !important;
+    color: var(--text-muted) !important;
+    background: var(--bg-section) !important;
+}
+.skill-tag:hover {
+    background: var(--text-main) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--text-main) !important;
+}
+.project-modal-header-info {
+    background: var(--bg-card) !important;
+}
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+.contact-form .input-box input,
+.contact-form .input-box textarea {
+    background-color: var(--input-bg) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-main) !important;
+}
+.contact-form .input-box input:focus,
+.contact-form .input-box textarea:focus {
+    border-color: var(--text-main) !important;
+}
+.contact-form .input-box .send-btn {
+    background-color: var(--text-main) !important;
+    color: var(--bg-main) !important;
+    border-color: var(--text-main) !important;
+}
+.contact-form .input-box .send-btn:hover {
+    background-color: transparent !important;
+    color: var(--text-main) !important;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+    background-color: var(--bg-section) !important;
+    color: var(--text-muted) !important;
+    border-top: 1px solid var(--border-color) !important;
+}
+.footer .footer-title {
+    color: var(--text-main) !important;
+}
+
+/* ============================================================
+   LIGHT MODE SPECIFIC OVERRIDES (For sections below homepage)
+   ============================================================ */
+
+
+
+
+
