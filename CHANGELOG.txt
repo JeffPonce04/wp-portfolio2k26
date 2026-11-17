@@ -1,0 +1,14 @@
+Portfolio2k26 WordPress Theme
+
+Version 2.1.0 - Video Playback and Page Customizer Update
+- Fixed the laptop presentation poster by replacing the portrait group cutout with a 1280x720 trailer still.
+- Added a visible Play Presentation button when browser autoplay is blocked.
+- Added runtime fallback for the WordPress video URL and dynamic MIME type.
+- Added explicit video error and playback status handling.
+- Remuxed trailer.mp4 with MP4 fast-start metadata.
+- Added the Portfolio Pages Customizer panel with 14 page/section panels.
+- Added per-section headings, subtitles, background image settings, and grouped media controls.
+- Added separate Customizer controls for the presentation MP4 and poster image.
+- Preserved existing saved page HTML and added a safe render-time patch for older presentation markup.
+- Preserved legacy image setting values while migrating to extension-specific image setting keys.
+- Updated the front-end editor so clicking the play overlay opens the video media picker while edit mode is active.
